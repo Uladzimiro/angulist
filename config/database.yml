@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: angulist_development
+  host: localhost
+  pool: 50
+  username: developer
+  password: 'developer'
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: angulist_test
+  host: localhost
+  pool: 50
+  username: developer
+  password: 'developer'
