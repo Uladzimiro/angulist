@@ -11,7 +11,6 @@ html lang="en"
     .row
       = render 'layouts/top_bar'
       .columns.small-12
-        p.notice= notice
-        p.alert= alert
+        = render 'layouts/alerts'
         = yield
-        = javascript_include_tag "application"
+    = javascript_include_tag "application"
