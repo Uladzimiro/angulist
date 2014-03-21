@@ -17,4 +17,8 @@ describe User do
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:email) }
   end
+
+  context 'associations' do
+    it { should have_many(:groups) }
+  end
 end
