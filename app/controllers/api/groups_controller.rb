@@ -1,13 +1,18 @@
-class Api::GroupsController < ApplicationController
-  def index
-  end
+module Api
+  class GroupsController < BaseController
+    def index
+    end
 
-  def create
-  end
-
-  def update
-  end
-
-  def destroy
+    def show
+    end
+  
+    def create
+    end
+  
+    def update
+    end
+  
+    def destroy
+    end
   end
 end

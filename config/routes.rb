@@ -5,8 +5,8 @@ Angulist::Application.routes.draw do
   root 'home#index'
 
   namespace :api, defaults: { format: :json } do
-    resources :items, only: [:index, :create, :update, :destroy]
-    resources :groups, only: [:index, :create, :update, :destroy]
+    resources :groups, only: [:index, :show, :create, :update, :destroy]
+    resources :items, only: [:index, :show, :create, :update, :destroy]
   end
 
 end
