@@ -14,6 +14,7 @@ gem 'active_model_serializers'
 gem 'devise'
 gem 'slim-rails'
 gem 'foundation-rails'
+gem 'simple_form'
 gem 'figaro'
 
 group :production do
