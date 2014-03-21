@@ -16,6 +16,7 @@ gem 'slim-rails'
 gem 'foundation-rails'
 gem 'simple_form'
 gem 'figaro'
+gem 'inherited_resources'
 
 group :production do
   gem 'rails_12factor'
