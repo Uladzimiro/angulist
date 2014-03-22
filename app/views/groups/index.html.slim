@@ -1,2 +1,10 @@
-h1 Groups#index
-p Find me in app/views/groups/index.html.slim
+div ng-app='angulist' ng-controller='GroupsController' ng-init='init()'
+  .row
+    .columns.small-4
+      form ng-submit='createGroup()'
+        input type='text' ng-model='newGroup.title'
+        input.button type='submit'
+      ul
+        li ng-repeat='group in groups'
+          '{{group.title}}
+    .columns.small-8

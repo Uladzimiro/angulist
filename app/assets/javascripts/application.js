@@ -15,6 +15,8 @@
 //= require foundation
 //= require turbolinks
 //= require angular
+//= require angular-resource
+//= require angulist/angulist
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
