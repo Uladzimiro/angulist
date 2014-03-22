@@ -3,6 +3,7 @@ Angulist::Application.routes.draw do
   devise_for :users
 
   root 'home#index'
+  resources :groups, only: :index
 
   namespace :api, defaults: { format: :json } do
     resources :groups, only: [:index, :show, :create, :update, :destroy]

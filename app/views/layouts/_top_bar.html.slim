@@ -2,7 +2,10 @@ nav.top-bar data-topbar=""
   ul.title-area
     li.name
       h1
-        a href="#" Angulist
+        - if user_signed_in?
+          = link_to 'Angulist', groups_path
+        - else
+          = link_to 'Angulist', root_path
     li.toggle-topbar.menu-icon
       a href="#"  Menu
   section.top-bar-section
@@ -11,7 +14,7 @@ nav.top-bar data-topbar=""
         li
           = link_to 'Sign Out', destroy_user_session_path, method: :delete
       - else
-        li
+        li class=active_if_current(new_user_session_path)
           = link_to 'Sign In', new_user_session_path
-        li
+        li class=active_if_current(new_user_registration_path)
           = link_to 'Sign Up', new_user_registration_path
