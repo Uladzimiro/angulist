@@ -1,4 +1,4 @@
-angular.module('angulist').factory 'Group', ($resource) ->
+angular.module('angulist').factory 'Group', ['$resource', ($resource) ->
   class Group
     constructor: ->
       @service = $resource('/api/groups')
@@ -9,4 +9,5 @@ angular.module('angulist').factory 'Group', ($resource) ->
 
     all: ->
       @service.query()
+]
   

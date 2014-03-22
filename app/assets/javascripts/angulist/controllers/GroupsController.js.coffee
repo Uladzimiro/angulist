@@ -1,4 +1,4 @@
-angular.module('angulist').controller 'GroupsController', ($scope, Group) ->
+angular.module('angulist').controller 'GroupsController', ['$scope', 'Group', ($scope, Group) ->
   $scope.newGroup = {}
 
   $scope.init = ->
@@ -8,3 +8,5 @@ angular.module('angulist').controller 'GroupsController', ($scope, Group) ->
   $scope.createGroup = ->
     @groupService.create($scope.newGroup).then (group) ->
       $scope.groups.unshift(group)
+      $scope.newGroup = {}
+]
