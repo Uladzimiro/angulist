@@ -17,6 +17,7 @@ gem 'foundation-rails'
 gem 'simple_form'
 gem 'figaro'
 gem 'inherited_resources'
+gem 'angularjs-rails'
 
 group :production do
   gem 'rails_12factor'
