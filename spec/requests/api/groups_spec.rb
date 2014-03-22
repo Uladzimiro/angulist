@@ -69,8 +69,8 @@ describe 'Groups API' do
 
           updated_group = Group.find(group.id)
           expect(updated_group.id).to eq(group.id)
-          expect(updated_group.title).to eq(updated_group.title)
-          expect(updated_group.sort_order).to eq(updated_group.sort_order)
+          expect(updated_group.title).to eq(new_attributes[:title])
+          expect(updated_group.sort_order).to eq(new_attributes[:sort_order])
           expect(updated_group.created_at.to_i).to eq(group.created_at.to_i)
         end
       end
