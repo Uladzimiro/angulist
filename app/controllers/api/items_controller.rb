@@ -8,7 +8,7 @@ module Api
     end
 
     def resource
-      @item ||= end_of_association_chain.joins(:group).where(groups: { user_id: current_user.id }).first
+      @item ||= end_of_association_chain.joins(:group).where(id: params[:id]).where(groups: { user_id: current_user.id }).first
       raise ActiveRecord::RecordNotFound if @item.nil?
       @item = Item.find(@item.id) #fix to solve ReadOnly issue
     end

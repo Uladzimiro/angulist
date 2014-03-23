@@ -7,7 +7,7 @@ angular.module('angulist').factory 'Group', ['$resource', ($resource) ->
       group = new @service(attrs)
       group.$save()
 
-    all: ->
-      @service.query()
+    all: (callback)->
+      @service.query(callback)
 ]
   

@@ -1,11 +1,15 @@
 angular.module('angulist').factory 'Item', ['$resource', ($resource) ->
   class Item
     constructor: ->
-      @service = $resource('/api/items')
+      @service = $resource('/api/items/:id', null,
+        update: {method: 'PATCH'}
+      )
 
     create: (attrs) ->
-      item = new @service(attrs)
-      item.$save()
+      new @service(attrs).$save()
+
+    update: (item) ->
+      new @service(item).$update(id: item.id)
 
     all: ->
       @service.query()
