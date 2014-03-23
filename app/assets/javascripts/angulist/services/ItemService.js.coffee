@@ -11,6 +11,9 @@ angular.module('angulist').factory 'Item', ['$resource', ($resource) ->
     update: (item) ->
       new @service(item).$update(id: item.id)
 
+    delete: (item) ->
+      new @service().$delete(id: item.id)
+
     all: ->
       @service.query()
 ]

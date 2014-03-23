@@ -17,9 +17,10 @@
       .row
         .columns.small-12
           ul.side-nav
-            li(ng-class="{active: $first}" activegroup ng-repeat='group in groups' ng-click='changeCurrentGroup(group)')
+            li(ng-class="{active: group==currentGroup}" ng-repeat='group in groups' ng-click='changeCurrentGroup(group)')
               a href='#/group/{{group.id}}'
-                editablespan model='group.title' on-ready='updateGroup(group)'
+                editablespan model='group.title' on-ready='updateGroup(group)' class='ellipsis'
+              a.remove_group ng-click='deleteGroup(group); $event.stopPropagation()' x
     .columns.small-8
       .row
         .columns.small-12
@@ -33,3 +34,4 @@
             li.clearfix ng-repeat='item in items | filter:{group_id: currentGroup.id}' ng-class='{completed: item.completed}'
               input type='checkbox' ng-model='item.completed' ng-change='updateItem(item)'
               editablespan model='item.title' on-ready='updateItem(item)'
+              a.remove_item ng-click='deleteItem(item)' x

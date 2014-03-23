@@ -30,4 +30,16 @@ angular.module('angulist').controller 'GroupsController', ['$scope', 'Group', 'I
 
   $scope.updateItem = (item) ->
     @itemService.update(item)
+
+  $scope.deleteItem = (item) ->
+    @itemService.delete(item).then ->
+      $scope.items.splice($scope.items.indexOf(item), 1)
+
+  $scope.deleteGroup = (group) ->
+    @groupService.delete(group).then ->
+      $scope.groups.splice($scope.groups.indexOf(group), 1)
+      deleted = $scope.items.filter (item) -> item.group_id == group.id
+      deleted.forEach (item) -> $scope.items.splice($scope.items.indexOf(item), 1)
+      if $scope.currentGroup is group
+        $scope.currentGroup = $scope.groups[0]
 ]

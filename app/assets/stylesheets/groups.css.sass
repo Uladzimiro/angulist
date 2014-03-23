@@ -1,11 +1,14 @@
 .side-nav
   > li
+    position: relative
     padding: rem-calc(5px) rem-calc(10px)
     border-radius: rem-calc(5px)
     border: 1px solid transparent
     &:hover 
       border: 1px solid #e3e3e3
       background: #fafafa
+      .remove_group
+        display: block !important
       > a
         color: #008CBA !important
     &.active
@@ -22,6 +25,7 @@
 
 .items-list
   li
+    position: relative
     > input[type='checkbox']
       float: left
       margin: 7px 10px 0 0
@@ -31,5 +35,16 @@
       span
         color: #aaaaaa
         text-decoration: line-through
+    &:hover
+      .remove_item
+        display: block !important
 
+.remove_item, .remove_group
+  position: absolute
+  right: rem-calc(10px)
+  top: rem-calc(4px)
+  font-size: rem-calc(14px)
+  font-weight: bold
+  display: none !important
+ 
 
