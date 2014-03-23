@@ -27,7 +27,7 @@
           form ng-submit='createItem()'
             .row.collapse
               .columns.small-8
-                input type='text' ng-model='newItem.title' placeholder='Item Title' maxlength='50'
+                input type='text' ng-model='newItem.title' placeholder='New {{currentGroup.title}} Task' maxlength='50'
               .columns.small-4
                 input.button.postfix type='submit' value='Add Item'
           ul.side-nav.items-list
