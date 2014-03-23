@@ -1241,6 +1241,10 @@
 
 @import 'foundation';
 
+.clearfix {
+  @include clearfix;
+}
+
 @import 'general';
 @import 'home';
 @import 'groups';

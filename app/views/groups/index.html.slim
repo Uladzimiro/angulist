@@ -29,7 +29,7 @@ div ng-app='angulist' ng-controller='GroupsController' ng-init='init()'
                 input type='text' ng-model='newItem.title' placeholder='Item Title'
               .columns.small-4
                 input.button.postfix type='submit' value='Add Item'
-          ul.side-nav
-            li ng-repeat='item in items | filter:{group_id: currentGroup.id}'
+          ul.side-nav.items-list
+            li.clearfix ng-repeat='item in items | filter:{group_id: currentGroup.id}'
               input type='checkbox' ng-model='item.completed' ng-change='updateItem(item)'
               editablespan model='item.title' on-ready='updateItem(item)'
