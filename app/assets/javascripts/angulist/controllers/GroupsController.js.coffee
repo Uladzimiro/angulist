@@ -3,6 +3,12 @@ angular.module('angulist').controller 'GroupsController', ['$scope', 'Group', 'I
   $scope.currentGroup = {}
   $scope.newItem = {}
 
+  $scope.activeQuantity = ->
+    $scope.items.map((item) -> if item.completed then 0 else 1).reduce (prev, curr) -> prev + curr
+
+  $scope.completedQuantity = ->
+    $scope.items.length - $scope.activeQuantity()
+
   $scope.init = ->
     @groupService = new Group()
     @itemService = new Item()

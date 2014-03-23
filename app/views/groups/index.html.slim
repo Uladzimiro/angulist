@@ -8,6 +8,9 @@
           .columns.small-4
             input.button.postfix type='submit' value='Add Group'
     .columns.small-8
+      .row
+        .columns.small-12
+          <taskcounters>
       h4.text-center 
         | Tasks for 
         strong
@@ -22,6 +25,8 @@
                 editablespan model='group.title' on-ready='updateGroup(group)' class='ellipsis'
               a.remove_group ng-click='deleteGroup(group); $event.stopPropagation()' x
     .columns.small-8
+      .row
+        .columns.small-12
       .row
         .columns.small-12
           form ng-submit='createItem()'
