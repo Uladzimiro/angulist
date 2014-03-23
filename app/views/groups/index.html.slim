@@ -9,8 +9,11 @@
             input.button.postfix type='submit' value='Add Group'
     .columns.small-8
       .row
-        .columns.small-12
+        .columns.small-6
           <taskcounters>
+        .columns.small-6.sort-links.text-right
+          a ng-click='orderBy("created_at")'  ng-class='{active: orderProp == "created_at"}' Priority
+          a ng-click='orderBy("complete_on")' ng-class='{active: orderProp == "complete_on"}' Due Date
       h4.text-center 
         | Tasks for 
         strong
@@ -36,7 +39,7 @@
               .columns.small-4
                 input.button.postfix type='submit' value='Add Item'
           ul.side-nav.items-list
-            li.clearfix ng-repeat='item in items | filter:{group_id: currentGroup.id}' ng-class='{completed: item.completed}'
+            li.clearfix ng-repeat='item in items | filter:{group_id: currentGroup.id} | orderBy:orderProp' ng-class='{completed: item.completed}'
               input type='checkbox' ng-model='item.completed' ng-change='updateItem(item)'
               editablespan model='item.title' on-ready='updateItem(item)'
               p.due-date ng-show='item.complete_on'

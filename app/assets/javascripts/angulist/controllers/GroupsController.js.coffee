@@ -2,6 +2,7 @@ angular.module('angulist').controller 'GroupsController', ['$scope', 'Group', 'I
   $scope.newGroup = {}
   $scope.currentGroup = {}
   $scope.newItem = {}
+  $scope.orderProp = 'complete_on'
 
   $scope.activeQuantity = ->
     if $scope.items.length
@@ -54,4 +55,8 @@ angular.module('angulist').controller 'GroupsController', ['$scope', 'Group', 'I
       deleted.forEach (item) -> $scope.items.splice($scope.items.indexOf(item), 1)
       if $scope.currentGroup is group
         $scope.currentGroup = $scope.groups[0]
+
+  $scope.orderBy = (sortOrder) ->
+    console.log sortOrder
+    $scope.orderProp = sortOrder
 ]
