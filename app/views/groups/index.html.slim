@@ -4,7 +4,7 @@ div ng-app='angulist' ng-controller='GroupsController' ng-init='init()'
       form ng-submit='createGroup()'
         .row.collapse
           .columns.small-8
-            input type='text' ng-model='newGroup.title' placeholder='Group Title'
+            input type='text' ng-model='newGroup.title' placeholder='Group Title' maxlength='30'
           .columns.small-4
             input.button.postfix type='submit' value='Add Group'
     .columns.small-8
@@ -26,7 +26,7 @@ div ng-app='angulist' ng-controller='GroupsController' ng-init='init()'
           form ng-submit='createItem()'
             .row.collapse
               .columns.small-8
-                input type='text' ng-model='newItem.title' placeholder='Item Title'
+                input type='text' ng-model='newItem.title' placeholder='Item Title' maxlength='50'
               .columns.small-4
                 input.button.postfix type='submit' value='Add Item'
           ul.side-nav.items-list

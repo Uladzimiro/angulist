@@ -18,6 +18,7 @@ describe Group do
   context 'validations' do
     it { should validate_presence_of(:user_id) }
     it { should validate_presence_of(:title) }
+    it { should ensure_length_of(:title).is_at_most(30) }
   end
 
   context 'associations' do
