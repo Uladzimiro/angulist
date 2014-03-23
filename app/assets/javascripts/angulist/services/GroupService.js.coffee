@@ -1,11 +1,15 @@
 angular.module('angulist').factory 'Group', ['$resource', ($resource) ->
   class Group
     constructor: ->
-      @service = $resource('/api/groups')
+      @service = $resource('/api/groups/:id', null,
+        update: {method: 'PATCH'}
+      )
 
     create: (attrs) ->
-      group = new @service(attrs)
-      group.$save()
+      new @service(attrs).$save()
+
+    update: (group) ->
+      new @service(group).$update(id: group.id)
 
     all: (callback)->
       @service.query(callback)

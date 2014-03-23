@@ -25,6 +25,9 @@ angular.module('angulist').controller 'GroupsController', ['$scope', 'Group', 'I
       $scope.items.unshift(item)
       $scope.newItem = {}
 
-  $scope.toggleItemCompletion = (item) ->
+  $scope.updateGroup = (group) ->
+    @groupService.update(group)
+
+  $scope.updateItem = (item) ->
     @itemService.update(item)
 ]

@@ -17,6 +17,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-route
+//= require mk-editable-span
 //= require angulist/angulist
 //= require_tree .
 

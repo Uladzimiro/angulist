@@ -1,4 +1,4 @@
-angulist = angular.module('angulist', ['ngResource', 'ngRoute'])
+angulist = angular.module('angulist', ['ngResource', 'ngRoute', 'mk.editablespan'])
 
 angulist.config ['$httpProvider', ($httpProvider) ->
   authToken = $('meta[name="csrf-token"]').attr('content')

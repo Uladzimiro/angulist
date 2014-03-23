@@ -18,7 +18,8 @@ div ng-app='angulist' ng-controller='GroupsController' ng-init='init()'
         .columns.small-12
           ul.side-nav
             li(ng-class="{active: $first}" activegroup ng-repeat='group in groups' ng-click='changeCurrentGroup(group)')
-              a href='#/group/{{group.id}}' {{group.title}}
+              a href='#/group/{{group.id}}'
+                editablespan model='group.title' on-ready='updateGroup(group)'
     .columns.small-8
       .row
         .columns.small-12
@@ -30,5 +31,5 @@ div ng-app='angulist' ng-controller='GroupsController' ng-init='init()'
                 input.button.postfix type='submit' value='Add Item'
           ul.side-nav
             li ng-repeat='item in items | filter:{group_id: currentGroup.id}'
-              input type='checkbox' ng-model='item.completed' ng-change='toggleItemCompletion(item)'
-              '{{item.title}}
+              input type='checkbox' ng-model='item.completed' ng-change='updateItem(item)'
+              editablespan model='item.title' on-ready='updateItem(item)'
