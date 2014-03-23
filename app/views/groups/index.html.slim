@@ -30,6 +30,6 @@ div ng-app='angulist' ng-controller='GroupsController' ng-init='init()'
               .columns.small-4
                 input.button.postfix type='submit' value='Add Item'
           ul.side-nav.items-list
-            li.clearfix ng-repeat='item in items | filter:{group_id: currentGroup.id}'
+            li.clearfix ng-repeat='item in items | filter:{group_id: currentGroup.id}' ng-class='{completed: item.completed}'
               input type='checkbox' ng-model='item.completed' ng-change='updateItem(item)'
               editablespan model='item.title' on-ready='updateItem(item)'
